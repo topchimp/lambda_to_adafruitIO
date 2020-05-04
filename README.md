@@ -10,6 +10,7 @@ Uses cloud watch events to push IoT data from dynamodb to Adafruit IO. I use thi
 * Fix the query in the lambda to get whatever data your using in dynamodb
 * Check it works with a test (you can also do a curl POST first from your command line to check) something like this:
 curl -F 'value=WHATEVER_VALUE_YOU_WANT_TO_POST' -H "X-AIO-Key: YOUR_ADAFRUIT_KEY" https://io.adafruit.com/api/v2/YOUR_ACCOUNT/feeds/YOUR_FEED_NAME/data
+* Use deploy_to_aws.sh to deploy (remember to edit the name of your function). Note, It has to do the zip because now lambda does not include the Python requests module, so you have to bundle it yourself.
 * Create a Cloudwatch event - mines a schedule every 20 minutes
 
 ## What does it look like?
